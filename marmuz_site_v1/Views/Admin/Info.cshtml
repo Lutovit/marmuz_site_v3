@@ -1,0 +1,61 @@
+﻿@model marmuz_site_v1.Models.AdminInfo
+
+
+
+<div>
+    <h4>Данные пользователя</h4>
+</div>
+
+<div class="container-fluid">
+
+    <div class="row">
+
+        <div class="col-xs-12 col-lg-3 m-3 px-2">
+
+            <h5>@Html.DisplayNameFor(model => model.UserName) </h5>
+            @Html.DisplayFor(model => model.UserName)
+
+        </div>
+
+        <div class="col-xs-12 col-lg-3 m-3 px-2">
+
+            <h5>@Html.DisplayNameFor(model => model.CompanyName) </h5>
+            @Html.DisplayFor(model => model.CompanyName)
+
+        </div>
+
+        <div class="col-xs-12 col-lg-3  m-3 px-2">
+
+            <h5>@Html.DisplayNameFor(model => model.UserEmail)</h5>
+            @Html.DisplayFor(model => model.UserEmail)
+
+        </div>
+
+
+        <div class="col-xs-12 col-lg-3  m-3 px-2">
+
+            <h5>@Html.DisplayNameFor(model => model.UserRoleList)</h5>
+
+            <table class="table">
+
+                @foreach (string st in Model.UserRoleList)
+                {
+                    <tr>
+                        <td align="center">@st</td>
+                    </tr>
+                }
+
+            </table>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div>
+    <a href="/Admin/Index" class="btn btn-dark my-2 mx-2">Вернуться в панель администратора.</a>
+    <a href="/Admin/Edit?Id=@ViewBag.id" class="btn btn-dark my-2 mx-2">Редактировать данные пользователя.</a>
+</div>
+
+

@@ -1,0 +1,25 @@
+﻿
+@model marmuz_site_v1.Models.ApplicationUser
+
+<h3 class="my-3">Уверен, что хочешь удалить аккаунт пользователя?</h3>
+
+<div>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+
+            <button type="submit" class="btn btn-danger my-3">Удалить пользователя</button>
+
+        </div>
+    }
+
+</div>
+
+<div>
+    <a href="/Admin/Index" class="btn btn-dark">Вернуться в панель администратора.</a>
+</div>
+
+

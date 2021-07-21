@@ -1,0 +1,24 @@
+﻿
+@model marmuz_site_v1.Models.ApplicationUser
+
+<h3 class="my-3">Уверен, что хочешь дать пожизненный бан этому пользователю?</h3>
+
+<div>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+
+            <button type="submit" class="btn btn-danger my-3">Забанить  пользователя</button>
+
+        </div>
+    }
+
+</div>
+
+<div>
+    <a href="/Admin/Index" class="btn btn-dark">Вернуться в панель администратора.</a>
+</div>
+

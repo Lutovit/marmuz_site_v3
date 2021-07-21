@@ -1,0 +1,86 @@
+﻿@model IEnumerable<marmuz_site_v1.Models.ApplicationRole>
+
+
+@{
+    ViewBag.Title = "Роли";
+}
+
+<h2>Роли</h2>
+
+@Html.ActionLink("Добавить новую роль.", "Create", "Roles", null, htmlAttributes: new { @class = "btn btn-dark m-3" })
+
+
+
+<div class="container-fluid">
+
+    <div class="row">
+
+        <div class="col-xs-12 col-md-8 col-lg-4">
+
+            <div class="row">
+                <h5 class="mr-3">№</h5>
+                <h5>@Html.DisplayName("Имя роли")</h5>
+            </div>
+
+        </div>
+
+        <div class="col-xs-12 col-md-8 col-lg-4">
+
+            <h5>@Html.DisplayName("Описание")</h5>
+
+        </div>
+
+        <div class="col-xs-12 col-md-8 col-lg-4">
+
+
+
+        </div>
+
+    </div>
+
+
+    @{
+        int i = 1;
+
+        foreach (var item in Model)
+        {
+            <div class="row border-top border-dark">
+
+                <div class="col-xs-12 col-md-8 col-lg-4">
+
+                    <div class="row">
+                        <h5 class="mr-3">@i</h5>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </div>
+
+                </div>
+
+                <div class="col-xs-12 col-md-8 col-lg-4">
+                    @Html.DisplayFor(modelItem => item.Description)
+                </div>
+
+                <div class="ccol-xs-12 col-md-8 col-lg-4">
+
+                    <div class="row">
+
+                        @Html.ActionLink("Edit", "Edit", "Roles", new { id = item.Id }, htmlAttributes: new { @class = "btn btn-dark mx-2 my-2" })
+                        @Html.ActionLink("Delete", "DeleteRole", "Roles", new { id = item.Id }, htmlAttributes: new { @class = "btn btn-dark mx-2 my-2" })
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            i++;
+        }
+    }
+
+</div>
+
+
+
+
+<div>
+    <a href="/Admin/Index" class="btn btn-dark">Вернуться в панель администратора.</a>
+</div>

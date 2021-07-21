@@ -1,0 +1,76 @@
+﻿@model marmuz_site_v1.Models.IndexViewModel
+
+
+    <div id="idManageIndex_1" class="px-5 py-2">
+
+
+        <p class="text-success">@ViewBag.StatusMessage</p>
+
+        <h3>Изменение параметров учетной записи</h3>
+        <hr />
+
+        <div class="container-fluid">
+
+            <div class="row justify-content-start py-2">
+
+                <div class="col-xs-12 col-lg-3 m-3 px-2">
+
+                    <h5>@Html.DisplayNameFor(model => model.ClientName) </h5>
+                    @Html.DisplayFor(model => model.ClientName)
+
+                </div>
+
+                <div class="col-xs-12 col-lg-3 m-3 px-2">
+
+                    <h5>@Html.DisplayNameFor(model => model.CompanyName) </h5>
+                    @Html.DisplayFor(model => model.CompanyName)
+
+                </div>
+
+                <div class="col-xs-12 col-lg-3  m-3 px-2">
+
+                    <h5>@Html.DisplayNameFor(model => model.Email)</h5>
+                    @Html.DisplayFor(model => model.Email)
+
+                </div>
+            </div>
+
+
+
+            <div class="row justify-content-start py-2">
+
+                <div class="col-xs-12 col-lg-3  m-3 px-2">
+                    <h5>Регистрационные данные: </h5>
+                    @Html.ActionLink("Изменить", "ChangeRegisterData", "Manage", routeValues: null, htmlAttributes:
+                     new { @class = "btn btn-dark", @style = "font-size: 1.1em" })
+                </div>
+
+                <div class="col-xs-12 col-lg-3  m-3 px-2">
+                    <h5>Пароль: </h5>
+                    @if (Model.HasPassword)
+                    {
+                        @Html.ActionLink("Изменить", "ChangePassword", "Manage", routeValues: null, htmlAttributes:
+                             new { @class = "btn btn-dark", @style = "font-size: 1.1em" })
+
+                    }
+                    else
+                    {
+                        @Html.ActionLink("Создать", "SetPassword", "Manage", routeValues: null, htmlAttributes:
+                             new { @class = "btn btn-dark", @style = "font-size: 1.1em" })
+                    }
+                </div>
+
+                <div class="col-xs-12 col-lg-3  m-3 px-2">
+                    <h5>Удалить аккаунт: </h5>
+                    @Html.ActionLink("Удалить", "Delete", "Account", routeValues: null, htmlAttributes:
+                     new { @class = "btn btn-dark", @style = "font-size: 1.1em" })
+                </div>
+
+
+            </div>
+
+
+
+        </div>       
+
+    </div>

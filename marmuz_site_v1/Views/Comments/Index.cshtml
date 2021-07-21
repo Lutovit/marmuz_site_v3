@@ -1,0 +1,86 @@
+﻿@model IEnumerable<marmuz_site_v1.Models.Comment>
+
+@{
+    ViewBag.Title = "Отзывы о нас";
+}
+
+<div class="container-fluid py-3">
+    <div class="row d-flex justify-content-between">
+
+        <div class="col-xs-12 col-md-3 col-lg-3">
+            <h2>Отзывы о нас</h2>
+        </div>
+
+
+        <div class="col-xs-12 col-md-3 col-lg-2">
+            @Html.ActionLink("Новый отзыв", "Create", routeValues: null, htmlAttributes: new { @style = "font-size: 1.3em", @class = "btn btn-dark" })
+        </div>
+    </div>
+</div>
+
+
+
+@foreach (var item in Model)
+{
+    <div class="container-fluid">
+        <hr>
+
+        <div class="row d-flex justify-content-between">
+
+            <div class="col-xs-12 col-md-2 col-lg-2">
+                <p>
+                    @if (Request.IsAuthenticated && item.User.Email == Request.RequestContext.HttpContext.User.Identity.Name)
+                    {
+                        <i class="fa fa-circle" aria-hidden="true" style="color:green"></i>
+                    }
+                    Имя: @Html.DisplayFor(modelItem => item.User.ClientName)
+                </p>
+
+                @if (item.isEdited)
+                {
+                    <p>
+                       <i class="fa fa-circle" aria-hidden="true" style="color:orange"></i>
+                       Отзыв изменен: @Html.DisplayFor(modelItem => item.DateOfLastEdit)                   
+                    </p>
+                }
+
+            </div>
+
+            <div class="col-xs-12 col-md-2 col-lg-2">
+                <p>Компания: @Html.DisplayFor(modelItem => item.User.CompanyName)</p>
+            </div>
+
+            <div class="col-xs-12 col-md-2 col-lg-2">
+                <p>Дата создания: @Html.DisplayFor(modelItem => item.Date)</p> 
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col pt-4">
+                @Html.DisplayFor(modelItem => item.Text)
+            </div>
+        </div>
+
+        <div class="row justify-content-end">
+
+            @if (Request.IsAuthenticated && item.User.Email == Request.RequestContext.HttpContext.User.Identity.Name)
+            {
+
+                <a href="/Comments/Edit?id=@item.Id" class="my-3 mx-4">
+                    <i class="fa fa-pencil" aria-hidden="true"></i>
+                </a>
+
+                <a href="/Comments/Delete?id=@item.Id" class="my-3 mx-4">
+                    <i class="fa fa-trash" aria-hidden="true"></i>
+                </a>
+
+            }
+
+        </div>
+        <hr>
+    </div>
+
+}
+
+

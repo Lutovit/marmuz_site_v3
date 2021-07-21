@@ -1,0 +1,4 @@
+﻿@if (Request.IsAuthenticated && Request.RequestContext.HttpContext.User.IsInRole("admin"))
+{
+    @Html.ActionLink("Панель администратора", "Index", "Admin", routeValues: null, htmlAttributes: new { id = "adminLink", @style = "color:white" })
+}

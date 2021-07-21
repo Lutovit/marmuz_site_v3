@@ -1,0 +1,137 @@
+﻿
+@font-face {
+    font-family: 'ISOCPEUR';
+    src: local('Font Name'), 
+        url('/Fonts/ISOCPEUR.woff2') format('woff2'), 
+        url('/Fonts/ISOCPEUR.woff') format('woff'), 
+        url('/Fonts/ISOCPEUR.ttf') format('ttf'),
+        url('/Fonts/ISOCPEUR.eot') format('eot');
+}
+
+
+body {
+    padding-top: 0px;
+    padding-bottom: 20px;
+    font-family: 'ISOCPEUR';
+    -webkit-font-smoothing: antialiased;
+    -webkit-overflow-scrolling: touch;
+}
+
+
+h1, h2, h3, h4, h5{
+    font-family: 'ISOCPEUR';
+    font-weight: bolder;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 0px;
+    padding-right: 0px;
+    font-family: 'ISOCPEUR';
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 600px;
+}
+
+
+
+#idHomeIndex_1 {
+    background: url(/Images/10.jpg) no-repeat center top;
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
+    width: 100%;
+    min-height: 500px;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#idHomeIndex_1 p {
+    font-size: 1.3em;
+}
+
+#idHomeIndex_2 p {
+    font-size: 1.3em;
+}
+
+#idHomeIndex_4 p {
+    font-size: 1.3em;
+}
+
+
+#idHomeIndex_3 {
+    background: url(/Images/10.jpg) no-repeat center top;
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: 100%;
+    width: 100%;
+    min-height: 500px;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#navbarSupportedContent li {
+    font-size: 1.5em;
+}
+
+
+.navbar-brand {
+    font-size: 2em;
+}
+
+#footer p {
+    font-size: 1.1em;
+}
+
+
+
+#idOurProjects {
+    width: 100%;
+    min-height: 500px;
+}
+
+
+#idOurProjects p {
+    font-size: 1.5em;
+}
+
+
+.hmin500 {
+    min-height: 500px;
+}
+
+
+
+#idManageIndex_1 {
+    min-height: 500px;
+}
+
+
+#idHomeContact_1 {
+    min-height: 500px;
+}
+
+
+
+    #idCommentDelete_1 {
+        min-height: 500px;
+    }
+
+ #idAccDelete {
+    min-height: 500px;
+}
