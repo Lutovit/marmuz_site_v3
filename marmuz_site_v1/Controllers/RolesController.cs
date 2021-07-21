@@ -85,7 +85,7 @@ namespace marmuz_site_v1.Controllers
             ApplicationUser user = await UserManager.FindByEmailAsync(User.Identity.Name);
 
 
-            if (user != null && user.Email == "pilot_mig@bk.ru")
+            if (user != null && user.Email == "admin_email")
             {
 
                 ApplicationRole roleAdmin = await RoleManager.FindByNameAsync("admin");

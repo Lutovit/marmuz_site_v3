@@ -14,13 +14,13 @@ namespace marmuz_site_v1.Controllers
     public class ContentController : Controller
     {
 
-        private string CrEmail ="RazumProekt2021@gmail.com"; //Credentials email
-        private string CrPass = "RazumProect2021_RazumProect2021";  //Credentials pass
+        private string CrEmail ="хххххххххххххххх"; //Credentials email
+        private string CrPass = "хххххххххххххххххххх";  //Credentials pass
 
-        private string emailFrom = "RazumProekt2021@gmail.com";
+        private string emailFrom = "ххххххххххххххххххххххххх";
 
-        private string emailTo = "Razumproekt@gmail.com";
-        private string emailCopyTo = "Marmuzevich@gmail.com";  
+        private string emailTo = "хххххххххххххххххххххххххххххххх";
+        private string emailCopyTo = "хххххххххххххххххххххххххххх";  
 
 
 
